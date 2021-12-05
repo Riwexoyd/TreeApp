@@ -16,4 +16,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TreeApp.Entities\TreeApp.Entities.csproj" />
+  </ItemGroup>
+
 </Project>
