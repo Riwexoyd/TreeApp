@@ -18,7 +18,6 @@ namespace TreeApp.Entities
         public ApplicationDbContext(IEnumerable<IConnectionStringResolver> connectionStringResolvers)
         {
             _connectionStringResolver = connectionStringResolvers.FirstOrDefault(i => i.CanResolve());
-            Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
