@@ -47,6 +47,32 @@ namespace TreeApp.Core
             }
         }
 
+        internal static double GetThickness(double height)
+        {
+            //  1.5 метра -> 5 см
+            // 50 метров - 1 метр
+            return height / 30;
+        }
+
+        internal static double GetWidth(double height, int seed)
+        {
+            var random = new Random(seed);
+            var coef = random.NextDouble() * 0.35;
+            return height * (0.5 + coef);
+        }
+
+        internal static double GetStartHeight(double height)
+        {
+            return height / 7;
+        }
+
+        internal static int GetBranchCount(double height, int seed)
+        {
+            var random = new Random(seed);
+            var coef = 0.75 + random.NextDouble() * 0.25;
+            return (int)Math.Round(height * coef / 10);
+        }
+
         private static double GetYearCoef(int totalDays, out int rem)
         {
             if (totalDays >= DaysInYear)

@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.Entities", "TreeApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.Utils", "TreeApp.Utils\TreeApp.Utils.csproj", "{AA507D43-62A7-4861-ABC0-079CB6E40550}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeApp.Core", "TreeApp.Core\TreeApp.Core.csproj", "{F4E79253-134A-4DC5-9767-7F1CE758768E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.Core", "TreeApp.Core\TreeApp.Core.csproj", "{F4E79253-134A-4DC5-9767-7F1CE758768E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeApp.Core.Tests", "TreeApp.Core.Tests\TreeApp.Core.Tests.csproj", "{FB902CC0-DB0B-4ECA-897A-2A342418A12E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.Core.Tests", "TreeApp.Core.Tests\TreeApp.Core.Tests.csproj", "{FB902CC0-DB0B-4ECA-897A-2A342418A12E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeApp.DesktopApp", "TreeApp.DesktopApp\TreeApp.DesktopApp.csproj", "{C92EDD73-52BC-402F-8715-D544C3436D2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{FB902CC0-DB0B-4ECA-897A-2A342418A12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB902CC0-DB0B-4ECA-897A-2A342418A12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB902CC0-DB0B-4ECA-897A-2A342418A12E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C92EDD73-52BC-402F-8715-D544C3436D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92EDD73-52BC-402F-8715-D544C3436D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C92EDD73-52BC-402F-8715-D544C3436D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C92EDD73-52BC-402F-8715-D544C3436D2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
