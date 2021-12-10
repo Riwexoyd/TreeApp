@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.Web", "TreeApp.Web\TreeApp.Web.csproj", "{4A22F33A-7AFE-4FFE-8787-3ADCED5066D0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.Entities", "TreeApp.Entities\TreeApp.Entities.csproj", "{6F318AE0-E2B6-4F25-8B13-A7DAEB213936}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.Utils", "TreeApp.Utils\TreeApp.Utils.csproj", "{AA507D43-62A7-4861-ABC0-079CB6E40550}"
@@ -13,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.Core", "TreeApp.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.Core.Tests", "TreeApp.Core.Tests\TreeApp.Core.Tests.csproj", "{FB902CC0-DB0B-4ECA-897A-2A342418A12E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeApp.DesktopApp", "TreeApp.DesktopApp\TreeApp.DesktopApp.csproj", "{C92EDD73-52BC-402F-8715-D544C3436D2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.DesktopApp", "TreeApp.DesktopApp\TreeApp.DesktopApp.csproj", "{C92EDD73-52BC-402F-8715-D544C3436D2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeApp.Web", "TreeApp.Web\TreeApp.Web.csproj", "{7632ADAD-D3C7-4642-933D-0AF42EBFD310}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4A22F33A-7AFE-4FFE-8787-3ADCED5066D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A22F33A-7AFE-4FFE-8787-3ADCED5066D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A22F33A-7AFE-4FFE-8787-3ADCED5066D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A22F33A-7AFE-4FFE-8787-3ADCED5066D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6F318AE0-E2B6-4F25-8B13-A7DAEB213936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6F318AE0-E2B6-4F25-8B13-A7DAEB213936}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F318AE0-E2B6-4F25-8B13-A7DAEB213936}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{C92EDD73-52BC-402F-8715-D544C3436D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C92EDD73-52BC-402F-8715-D544C3436D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C92EDD73-52BC-402F-8715-D544C3436D2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7632ADAD-D3C7-4642-933D-0AF42EBFD310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7632ADAD-D3C7-4642-933D-0AF42EBFD310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7632ADAD-D3C7-4642-933D-0AF42EBFD310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7632ADAD-D3C7-4642-933D-0AF42EBFD310}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
