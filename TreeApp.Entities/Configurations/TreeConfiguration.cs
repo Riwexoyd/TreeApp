@@ -5,16 +5,16 @@ using TreeApp.Entities.Models;
 
 namespace TreeApp.Entities.Configurations
 {
-    internal class UserConfiguration : EntityConfiguration<User>
+    internal sealed class TreeConfiguration : EntityConfiguration<Tree>
     {
-        public override void ConfigureInternal(EntityTypeBuilder<User> builder)
+        public override void ConfigureInternal(EntityTypeBuilder<Tree> builder)
         {
-            builder.Property(i => i.RegistrationDate)
+            builder.Property(i => i.CreationDate)
                 .ValueGeneratedOnAdd()
                 .HasDefaultValueSql("now() at time zone 'utc'");
 
-            builder.HasMany(i => i.Trees)
-                .WithOne(j => j.Owner);
+            builder.Property(i => i.Title)
+                .HasMaxLength(256);
         }
     }
 }
