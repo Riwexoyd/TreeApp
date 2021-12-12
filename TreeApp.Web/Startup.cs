@@ -33,6 +33,7 @@ namespace TreeApp.Web
             services.AddServerSideBlazor();
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<User>>();
             services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddAntDesign();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
