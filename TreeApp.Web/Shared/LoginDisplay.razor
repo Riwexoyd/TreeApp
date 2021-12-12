@@ -1,12 +1,16 @@
-﻿<AuthorizeView>
+﻿@inject NavigationManager Url
+
+<AuthorizeView>
     <Authorized>
-        <a href="Identity/Account/Manage">Hello, @context.User.Identity.Name!</a>
-        <form method="post" action="Identity/Account/LogOut">
-            <button type="submit" class="nav-link btn btn-link">Log out</button>
-        </form>
+        <Menu Mode="MenuMode.Horizontal" Theme="MenuTheme.Dark">
+            <MenuItem Key="1" RouterLink="@Url.ToAbsoluteUri("/Identity/Account/Manage").AbsoluteUri">@context.User.Identity.Name</MenuItem>
+            <MenuItem Key="2" RouterLink="@Url.ToAbsoluteUri("/Identity/Account/LogOut").AbsoluteUri">Выйти</MenuItem>
+        </Menu>
     </Authorized>
     <NotAuthorized>
-        <a href="Identity/Account/Register">Register</a>
-        <a href="Identity/Account/Login">Log in</a>
+        <Menu Mode="MenuMode.Horizontal" Theme="MenuTheme.Dark">
+            <MenuItem Key="1" RouterLink="@Url.ToAbsoluteUri("/Identity/Account/Register").AbsoluteUri">Регистрация</MenuItem>
+            <MenuItem Key="2" RouterLink="@Url.ToAbsoluteUri("/Identity/Account/Login").AbsoluteUri">Войти</MenuItem>
+        </Menu>
     </NotAuthorized>
 </AuthorizeView>
