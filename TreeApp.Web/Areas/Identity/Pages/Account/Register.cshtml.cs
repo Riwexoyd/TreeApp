@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using TreeApp.Entities.Models;
+using TreeApp.Entities.Repositories;
 
 namespace TreeApp.Web.Areas.Identity.Pages.Account
 {
@@ -24,17 +25,20 @@ namespace TreeApp.Web.Areas.Identity.Pages.Account
         private readonly UserManager<User> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly ITreeRepository _treeRepository;
 
         public RegisterModel(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            ITreeRepository treeRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _treeRepository = treeRepository;
         }
 
         [BindProperty]
@@ -80,6 +84,13 @@ namespace TreeApp.Web.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+                    var tree = new Tree
+                    {
+                        Owner = user,
+                    };
+
+                    await _treeRepository.AddAsync(tree);
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

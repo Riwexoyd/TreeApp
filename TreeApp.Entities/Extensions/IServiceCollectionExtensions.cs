@@ -15,6 +15,7 @@ namespace TreeApp.Entities.Extensions
             serviceCollection.AddScoped<IConnectionStringResolver, HerokuConnectionStringResolver>();
 
             serviceCollection.AddScoped<IUserRepository, UserRepository>();
+            serviceCollection.AddScoped<ITreeRepository, TreeRepository>();
             return serviceCollection;
         }
     }

@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using TreeApp.ApplicationServices.Extensions;
 using TreeApp.Entities;
 using TreeApp.Entities.Extensions;
 using TreeApp.Entities.Models;
@@ -26,6 +27,7 @@ namespace TreeApp.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddEntityServices();
+            services.AddApplicationServices();
             services.AddDbContext<ApplicationDbContext>();
             services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
