@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.DesktopApp", "TreeA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.Web", "TreeApp.Web\TreeApp.Web.csproj", "{7632ADAD-D3C7-4642-933D-0AF42EBFD310}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeApp.ApplicationServices", "TreeApp.ApplicationServices\TreeApp.ApplicationServices.csproj", "{34FD11AA-CB3C-426E-9E73-5A2C3532845A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeApp.ApplicationServices", "TreeApp.ApplicationServices\TreeApp.ApplicationServices.csproj", "{34FD11AA-CB3C-426E-9E73-5A2C3532845A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

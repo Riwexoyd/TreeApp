@@ -25,3 +25,14 @@
 .layout-content {
     padding: 50px;
 }
+
+.tree-display {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tree-display > .tree-image-block > img {
+    max-height: 50vmin;
+    max-width: 50vmin;
+}

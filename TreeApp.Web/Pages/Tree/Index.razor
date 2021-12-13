@@ -1,0 +1,46 @@
+﻿@page "/tree"
+@using TreeApp.ApplicationServices.Services
+@using TreeApp.ApplicationServices.Specifications
+@using TreeApp.Entities.Repositories
+
+@inject ITreeRepository treeRepository
+@inject ITreeService treeService
+
+@attribute [Authorize]
+
+@if (TreeId != Guid.Empty)
+{
+	<div class="tree-display">
+		<div>
+			<Title Level="1" Type="success">Возраст вашей ёлки: @Age.Days дней</Title>
+			<br/>
+			<Title Level="1" Type="warning">Высота ёлки: @Height см.</Title>
+		</div>
+		<div class="tree-image-block">
+			<img src="api/tree/get/@TreeId"/>
+		</div>
+	</div>
+}
+
+@code {
+	[CascadingParameter]
+	private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+	private Guid TreeId { get; set; }
+
+	private TimeSpan Age { get; set; }
+
+	private double Height { get; set; }
+
+	protected override async Task OnInitializedAsync()
+	{
+		var state = await authenticationStateTask;
+		var name = state.User.Identity.Name;
+
+		var tree = await treeRepository.FirstOrDefaultAsync(new TreeByUserNameSpecification(name));
+		TreeId = tree.Id;
+
+		Height = await treeService.GetTreeHeight(TreeId);
+		Age = DateTime.UtcNow - tree.CreationDate;
+	}
+}

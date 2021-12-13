@@ -5,9 +5,9 @@ using TreeApp.Core.Models;
 
 namespace TreeApp.Core.Services
 {
-    public sealed class TreeDrawerService
+    public static class TreeDrawerService
     {
-        public Bitmap DrawTree(TreeModel tree, int imageWidth, int imageHeight)
+        public static Bitmap DrawTree(TreeModel tree, int imageWidth, int imageHeight)
         {
             var bitmap = new Bitmap(imageWidth, imageHeight, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 

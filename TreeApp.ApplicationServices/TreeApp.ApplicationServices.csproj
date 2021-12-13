@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TreeApp.Core\TreeApp.Core.csproj" />
     <ProjectReference Include="..\TreeApp.Entities\TreeApp.Entities.csproj" />
   </ItemGroup>
 

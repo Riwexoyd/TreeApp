@@ -2,4 +2,11 @@
 
 <Menu Theme="MenuTheme.Dark" Mode="MenuMode.Horizontal">
     <MenuItem Key="1" RouterLink="@Url.ToAbsoluteUri("/").AbsoluteUri">Главная</MenuItem>
+    <AuthorizeView>
+        <Authorized>
+            <MenuItem Key="2" RouterLink="@Url.ToAbsoluteUri("/tree").AbsoluteUri">Моя ёлка</MenuItem>
+        </Authorized>
+        <NotAuthorized>
+        </NotAuthorized>
+    </AuthorizeView>
 </Menu>

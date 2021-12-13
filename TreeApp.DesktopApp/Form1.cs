@@ -27,9 +27,7 @@ namespace TreeApp.DesktopApp
                 Seed = string.IsNullOrEmpty(textBox1.Text) ? random.Next() : int.Parse(textBox1.Text),
             };
 
-            var treeDrawerService = new TreeDrawerService();
-
-            pictureBox1.Image = treeDrawerService.DrawTree(treeModel, pictureBox1.Width, pictureBox1.Height);
+            pictureBox1.Image = TreeDrawerService.DrawTree(treeModel, pictureBox1.Width, pictureBox1.Height);
         }
     }
 }
