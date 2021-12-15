@@ -6,7 +6,7 @@ using TreeApp.Entities.Models;
 
 namespace TreeApp.ApplicationServices.Specifications
 {
-    public sealed class TreeByUserNameSpecification : Specification<Tree>
+    internal sealed class TreeByUserNameSpecification : Specification<Tree>
     {
         public TreeByUserNameSpecification(string name)
         {

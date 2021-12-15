@@ -1,11 +1,28 @@
 ﻿@inherits LayoutComponentBase
 
-<Layout>
+@if (IsWinter)
+{
+    <Snowflakes/>
+}
+
+<Layout Class="layout">
     <Header Class="layout-header">
         <NavMenu />
         <LoginDisplay />
     </Header>
     <Content Class="layout-content">
+        <div class="general-form-control">
         @Body
+        </div>
     </Content>
 </Layout>
+
+@code {
+    private bool IsWinter { get; set; } = false;
+
+    protected override void OnInitialized()
+    {
+        var currentDate = DateTime.UtcNow;
+        IsWinter = currentDate.Month >= 12 || currentDate.Month <= 2;
+    }
+}

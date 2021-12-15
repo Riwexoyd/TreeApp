@@ -20,10 +20,27 @@
 .ant-layout-header.layout-header {
     display: flex;
     justify-content: space-between;
+    background-color: white;
+    padding: 0 16px;
+    height: auto;
+    max-height: 128px;
+}
+
+.layout-header .ant-menu-horizontal {
+    border-bottom: none;
+}
+
+.ant-layout.layout {
+    height: 100%;
 }
 
 .layout-content {
-    padding: 50px;
+    padding: 16px;
+}
+
+.general-form-control {
+    background-color: white;
+    padding: 24px;
 }
 
 .tree-display {

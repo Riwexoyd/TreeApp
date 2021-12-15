@@ -2,13 +2,13 @@
 
 <AuthorizeView>
     <Authorized>
-        <Menu Mode="MenuMode.Horizontal" Theme="MenuTheme.Dark">
+        <Menu Mode="MenuMode.Horizontal" Theme="MenuTheme.Light">
             <MenuItem Key="1" RouterLink="@Url.ToAbsoluteUri("/Identity/Account/Manage").AbsoluteUri">@context.User.Identity.Name</MenuItem>
             <MenuItem Key="2" RouterLink="@Url.ToAbsoluteUri("/Identity/Account/LogOut").AbsoluteUri">Выйти</MenuItem>
         </Menu>
     </Authorized>
     <NotAuthorized>
-        <Menu Mode="MenuMode.Horizontal" Theme="MenuTheme.Dark">
+        <Menu Mode="MenuMode.Horizontal" Theme="MenuTheme.Light">
             <MenuItem Key="1" RouterLink="@Url.ToAbsoluteUri("/Identity/Account/Register").AbsoluteUri">Регистрация</MenuItem>
             <MenuItem Key="2" RouterLink="@Url.ToAbsoluteUri("/Identity/Account/Login").AbsoluteUri">Войти</MenuItem>
         </Menu>
