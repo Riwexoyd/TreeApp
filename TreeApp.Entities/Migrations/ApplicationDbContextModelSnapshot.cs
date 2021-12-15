@@ -147,6 +147,34 @@ namespace TreeApp.Entities.Migrations
                     b.ToTable("AspNetRoles");
                 });
 
+            modelBuilder.Entity("TreeApp.Entities.Models.Tree", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreationDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp without time zone")
+                        .HasDefaultValueSql("now() at time zone 'utc'");
+
+                    b.Property<bool>("IsPublic")
+                        .HasColumnType("boolean");
+
+                    b.Property<Guid?>("OwnerId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Title")
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
+
+                    b.ToTable("Tree");
+                });
+
             modelBuilder.Entity("TreeApp.Entities.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -266,6 +294,20 @@ namespace TreeApp.Entities.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("TreeApp.Entities.Models.Tree", b =>
+                {
+                    b.HasOne("TreeApp.Entities.Models.User", "Owner")
+                        .WithMany("Trees")
+                        .HasForeignKey("OwnerId");
+
+                    b.Navigation("Owner");
+                });
+
+            modelBuilder.Entity("TreeApp.Entities.Models.User", b =>
+                {
+                    b.Navigation("Trees");
                 });
 #pragma warning restore 612, 618
         }

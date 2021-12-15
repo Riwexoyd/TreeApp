@@ -1,0 +1,46 @@
+﻿@page "/tree"
+
+@using TreeApp.ApplicationServices.Models
+@using TreeApp.ApplicationServices.Services
+
+@inject ITreeService treeService
+
+@attribute [Authorize]
+
+@if (TreeInfo != null)
+{
+	<div class="tree-display">
+		<div>
+			<Descriptions Title="Информация о ёлке" Bordered Column="@column">
+				<DescriptionsItem Title="Возраст">@TreeInfo.Age</DescriptionsItem>
+				<DescriptionsItem Title="Высота">@TreeInfo.Height</DescriptionsItem>
+			</Descriptions>
+		</div>
+		<div class="tree-image-block">
+			<img src="api/tree/get/@TreeInfo.Id"/>
+		</div>
+	</div>
+}
+
+@code {
+	[CascadingParameter]
+	private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+	private TreeInfoModel TreeInfo { get; set; }
+
+	private Dictionary<string, int> column = new Dictionary<string, int> {
+            { "xxl", 3 },
+            { "xl", 3},
+            { "lg", 2},
+            { "md", 2},
+            { "sm", 1},
+            { "xs", 1}
+        };
+
+	protected override async Task OnInitializedAsync()
+	{
+		var state = await authenticationStateTask;
+		var name = state.User.Identity.Name;
+		TreeInfo = await treeService.GetUserMainTreeInfo(name);
+	}
+}

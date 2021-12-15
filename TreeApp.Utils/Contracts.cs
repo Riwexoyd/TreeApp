@@ -11,5 +11,13 @@ namespace TreeApp.Utils
                 throw new ArgumentNullException(paramName);
             }
         }
+
+        public static void ArgumentCondition<T>(T argument, Func<T, bool> condition)
+        {
+            if (!condition(argument))
+            {
+                throw new ArgumentException("Invalid argument value", nameof(argument));
+            }
+        }
     }
 }

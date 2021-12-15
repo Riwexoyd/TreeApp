@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-using System;
 
 using TreeApp.Entities.Models;
 
@@ -15,6 +12,9 @@ namespace TreeApp.Entities.Configurations
             builder.Property(i => i.RegistrationDate)
                 .ValueGeneratedOnAdd()
                 .HasDefaultValueSql("now() at time zone 'utc'");
+
+            builder.HasMany(i => i.Trees)
+                .WithOne(j => j.Owner);
         }
     }
 }
